@@ -1,4 +1,4 @@
-package taskAnimals;
+package HomeWork1.taskAnimals;
 
 public class Whale extends Animal implements Mammal, LiveInWater {
     private final boolean hasFur = false;

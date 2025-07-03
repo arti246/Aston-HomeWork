@@ -1,7 +1,7 @@
-package taskTransport;
+package HomeWork1.taskTransport;
 
-import taskTransport.interfaces.CarriesCargo;
-import taskTransport.interfaces.Propeller;
+import HomeWork1.taskTransport.interfaces.CarriesCargo;
+import HomeWork1.taskTransport.interfaces.Propeller;
 
 public class Speedboat extends Transport implements Propeller, CarriesCargo {
     private double maxSpinSpeed;
@@ -10,7 +10,6 @@ public class Speedboat extends Transport implements Propeller, CarriesCargo {
         super(false, true, false, true);
         this.maxSpinSpeed = 60.0;
     }
-
     @Override
     public void printInfo() {
         System.out.println("Катер с макс. скоростью " + getMaxSpinSpeed() + "км/ч");

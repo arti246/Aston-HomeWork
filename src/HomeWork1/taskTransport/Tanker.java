@@ -1,7 +1,7 @@
-package taskTransport;
+package HomeWork1.taskTransport;
 
-import taskTransport.interfaces.CarriesCargo;
-import taskTransport.interfaces.Propeller;
+import HomeWork1.taskTransport.interfaces.CarriesCargo;
+import HomeWork1.taskTransport.interfaces.Propeller;
 
 public class Tanker extends Transport implements Propeller, CarriesCargo {
     private double maxSpinSpeed;

@@ -1,4 +1,4 @@
-package taskTransport.interfaces;
+package HomeWork1.taskTransport.interfaces;
 
 public interface Propeller {
     void startPropeller(); // Запуск винта

@@ -1,4 +1,4 @@
-package taskTransport;
+package HomeWork1.taskTransport;
 
 public abstract class Transport {
     private boolean hasWheels; // Имеет колёса

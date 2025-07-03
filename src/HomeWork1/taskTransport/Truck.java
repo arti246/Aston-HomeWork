@@ -1,7 +1,7 @@
-package taskTransport;
+package HomeWork1.taskTransport;
 
-import taskTransport.interfaces.CarriesCargo;
-import taskTransport.interfaces.Wheels;
+import HomeWork1.taskTransport.interfaces.CarriesCargo;
+import HomeWork1.taskTransport.interfaces.Wheels;
 
 public class Truck extends Transport implements Wheels, CarriesCargo {
     private int countWheels;

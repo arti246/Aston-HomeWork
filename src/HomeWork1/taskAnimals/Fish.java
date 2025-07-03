@@ -1,4 +1,4 @@
-package taskAnimals;
+package HomeWork1.taskAnimals;
 
 public class Fish extends Animal implements LiveInWater {
     private final boolean waterEnvironment = true;

@@ -1,4 +1,4 @@
-package taskTransport.interfaces;
+package HomeWork1.taskTransport.interfaces;
 
 public interface CarriesCargo {
     void loadCargo(String cargo);  // Загрузка груза

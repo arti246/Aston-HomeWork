@@ -1,4 +1,4 @@
-package taskAnimals;
+package HomeWork1.taskAnimals;
 
 public abstract class Animal {
     private final boolean hasSpine; // Есть ли позвоночник

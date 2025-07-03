@@ -1,9 +1,9 @@
-package taskTransport;
+package HomeWork1.taskTransport;
 
-import taskTransport.interfaces.CarriesCargo;
-import taskTransport.interfaces.Propeller;
-import taskTransport.interfaces.Wheels;
-import taskTransport.interfaces.Wink;
+import HomeWork1.taskTransport.interfaces.CarriesCargo;
+import HomeWork1.taskTransport.interfaces.Propeller;
+import HomeWork1.taskTransport.interfaces.Wheels;
+import HomeWork1.taskTransport.interfaces.Wink;
 
 public class Plane extends Transport implements Wheels, Propeller, Wink, CarriesCargo {
     private int countWheels;

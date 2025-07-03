@@ -1,6 +1,6 @@
-package taskTransport;
+package HomeWork1.taskTransport;
 
-import taskTransport.interfaces.Wheels;
+import HomeWork1.taskTransport.interfaces.Wheels;
 
 public class Taxi extends Transport implements Wheels {
     private int countWheels;
