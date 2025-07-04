@@ -1,8 +1,10 @@
 package HomeWork2;
 
-import java.util.Collection;
+import java.util.*;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
-public class MyArrayList<T> {
+public class MyArrayList<T> implements Iterable<T> {
     private T[] array;
     private static final int DEFAULT_CAPACITY = 10;
     private int size = 0;
@@ -101,5 +103,44 @@ public class MyArrayList<T> {
             }
         }
         return false;
+    }
+
+    public void clearArray() {
+        for (int i = 0; i < size; i++) {
+            array[i] = null;
+        }
+        size = 0;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<>() {
+            private int currentIndex = 0;
+
+            @Override
+            public boolean hasNext() {
+                return currentIndex < size;
+            }
+
+            @Override
+            public T next() {
+                if (!hasNext()) throw new NoSuchElementException();
+                return array[currentIndex++];
+            }
+        };
+    }
+
+    public Stream<T> stream() {
+        return StreamSupport.stream(
+                Spliterators.spliteratorUnknownSize(
+                        iterator(),
+                        Spliterator.ORDERED
+                ),
+                false // не параллельный поток
+        );
+    }
+
+    public int getSize() {
+        return size;
     }
 }

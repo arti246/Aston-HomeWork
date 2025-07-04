@@ -6,10 +6,11 @@ public class Book {
     private String author;
     private int countPage;
 
-    public Book(String name, String author, int year) {
+    public Book(String name, String author, int year, int countPage) {
         this.name = name;
         this.author = author;
         this.year = year;
+        this.countPage = countPage;
     }
 
     public String getName() {
@@ -42,5 +43,15 @@ public class Book {
 
     public void setCountPage(int countPage) {
         this.countPage = countPage;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", year=" + year +
+                ", author='" + author + '\'' +
+                ", countPage=" + countPage +
+                '}';
     }
 }

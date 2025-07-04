@@ -1,6 +1,13 @@
 package HomeWork2;
 
-public class MyHashSet<T> {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Spliterator;
+import java.util.Spliterators;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+
+public class MyHashSet<T> implements Iterable<T> {
     private MyArrayList<T>[] buckets;
     private int size;
 
@@ -38,5 +45,44 @@ public class MyHashSet<T> {
     private int getBucketIndex(T element) {
         if (element == null) return 0;
         return Math.abs(element.hashCode() % buckets.length);
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<>() {
+            private int currentBucket = 0;
+            private int currentIndex = 0;
+
+            @Override
+            public boolean hasNext() {
+                // Пропускаем пустые корзины
+                while (currentBucket < buckets.length) {
+                    if (currentIndex < buckets[currentBucket].getSize()) {
+                        return true;
+                    }
+                    currentBucket++;
+                    currentIndex = 0;
+                }
+                return false;
+            }
+
+            @Override
+            public T next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                return buckets[currentBucket].myGet(currentIndex++);
+            }
+        };
+    }
+
+    public Stream<T> stream() {
+        return StreamSupport.stream(
+                Spliterators.spliteratorUnknownSize(
+                        iterator(),
+                        Spliterator.DISTINCT // Уникальные
+                ),
+                false // не параллельный поток
+        );
     }
 }
