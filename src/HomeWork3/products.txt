@@ -1,0 +1,5 @@
+Apple 50.5 100
+Milk 80.0 30
+Bread 40.0 50
+Banana 65.0 45
+Egg 85 91
